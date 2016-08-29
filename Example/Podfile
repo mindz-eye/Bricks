@@ -1,0 +1,8 @@
+
+target 'Bricks_Example' do
+  pod 'Bricks', :path => '../'
+
+  target 'Bricks_Tests' do
+    inherit! :search_paths
+  end
+end

@@ -1,0 +1,665 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01ADE03AABBBE49139AF0359F7D1E7E1 /* Pods-Bricks_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F892CFD0BF65C22929E33C1BE865E4 /* Pods-Bricks_Example-dummy.m */; };
+		01B5A2DEC6D8E187F12C25ED8B298B86 /* BRKEdgeValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A5DD24A4A53219A98F1A36BFC68C693 /* BRKEdgeValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A9125C6D5ED75A99A7D1E96064085A6 /* BRKLayoutMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A079D7B779EA80A2264D173C2630D32 /* BRKLayoutMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		114979154670C2BC6AE43FC6E46FBDD5 /* BRKCenterLayoutAction.h in Headers */ = {isa = PBXBuildFile; fileRef = E37E61BF590B4846AF56C02A6B57163A /* BRKCenterLayoutAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2261D97C676B7F03943CB304FA42953B /* UIView+BRKLayoutMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = E42034E9E98DD1487B1E6CE0AD159B03 /* UIView+BRKLayoutMaker.m */; };
+		3F927A039FA3DCAE937D414B83D64DB7 /* BRKEdgeLayoutAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 9399A571CED16E99F56749AFD608266D /* BRKEdgeLayoutAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		436EC0CA9804B2C871D1F41344AFF374 /* BRKLayoutMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7852FF1C9B867A0970D6D1D31BA3 /* BRKLayoutMaker.m */; };
+		478BA4535BEDC1422AA3AFD9F5477925 /* BRKEdgeLayoutAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84584E9E26A4D4DEE87ED9C38DE9AA /* BRKEdgeLayoutAction.m */; };
+		5028C1F4525F1D33D62E78C1DD4DDAE9 /* BRKLayoutGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B1EB099CC9860A504294E60FDDDCD1 /* BRKLayoutGeometry.m */; };
+		5F323330F27D198A9938511011B775E8 /* Bricks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63327175881BF03F25D31F90895B2CC7 /* Bricks-dummy.m */; };
+		7A116BF379D0E57E879175320BFE5C7F /* BRKLayoutOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7012A1DC9475D6F5FEB459BA1B422D /* BRKLayoutOperation.m */; };
+		81CDC70F9A725F4406E5AA336C9BE526 /* BRKBaseLayoutAction.h in Headers */ = {isa = PBXBuildFile; fileRef = AB90DEF4D8D1B8738FDC6186FF95DD09 /* BRKBaseLayoutAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81D2909AF30213C8A13D4C47418D09BD /* BRKLayoutOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A1556A21F67E565E14839A21C7FF76 /* BRKLayoutOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87EB37FB6DF03003156FA16E851C95D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		88065350F48D3B02C023FC63CBFE62DD /* BRKAxisValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C9E2213BD7ADC5ABC775429718146E /* BRKAxisValue.m */; };
+		99726D8F37DCB704D660EC8A9A3E9F23 /* BRKSizeLayoutAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 76599B579376C5E680DC9D598AD67FA7 /* BRKSizeLayoutAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A21F5FE53F0629A2462AAAC311F8E172 /* BRKLayoutAction.h in Headers */ = {isa = PBXBuildFile; fileRef = C66334B5C88E6D4F78D8FDA504CB0724 /* BRKLayoutAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A43BDA7ECC1EEF1A699C40C77C1C7B60 /* BRKEdgeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5F55305D37D0CB62529F8E8595529 /* BRKEdgeValue.m */; };
+		A82AE49D652D57AC8DEF28D0893C2C09 /* BRKLayoutGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4481878B24FE4F11F93F82D184A91B /* BRKLayoutGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A852413FA0A8359E0423855888DE384A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B633150A1EB186DBD7ED0F0EA85FC54D /* BRKAxisValue.h in Headers */ = {isa = PBXBuildFile; fileRef = F2FA80ECD0C94BD394EF74C38639ED97 /* BRKAxisValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFC3CCC6BA1803D76807ECF6A609E431 /* BRKCenterLayoutAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD75748DDA8B23B55570B34ED3FCD7E /* BRKCenterLayoutAction.m */; };
+		CCBFAB4BBE33F9FA6EECDFFC4C88F7FB /* Pods-Bricks_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3672F620B97054825FB4AB36F747EC0 /* Pods-Bricks_Tests-dummy.m */; };
+		CE29C04600593A1C7EF266189B89350E /* Bricks.h in Headers */ = {isa = PBXBuildFile; fileRef = 349DDC328F1B4F1E7074A1FB6EFDC63B /* Bricks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D42D0C25DA000A871D187E1D3F05DC57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		D9AA4CA991223B555BBEC6DB51D12DCC /* UIView+BRKLayoutMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 474A9D1D8ABE3A8194A2E10A8E435A3F /* UIView+BRKLayoutMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB31B07CC309755F8A491A4FC390B20F /* BRKSizeLayoutAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 42959F70758829F4FD7041BD7F1DD3A2 /* BRKSizeLayoutAction.m */; };
+		E57E4D3C98D0BED79E3855C5B106E275 /* BRKLayoutValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 399E91E8019CCDE7A151FD7E483A9F23 /* BRKLayoutValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC4393799FA08D536730ADB05C0A7582 /* BRKUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 02547329CD64BE78940D34227778092A /* BRKUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2630318E0E7A802ACC31487EFB5A603 /* BRKBaseLayoutAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DE588EADF74B97861F054CEF3C4A1B42 /* BRKBaseLayoutAction.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04C76A1D034BAE02AAD6C0DE1BA10E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC8C6AF867150D6E64FC12B365D6D773;
+			remoteInfo = Bricks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00A1556A21F67E565E14839A21C7FF76 /* BRKLayoutOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKLayoutOperation.h; sourceTree = "<group>"; };
+		02547329CD64BE78940D34227778092A /* BRKUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKUtilities.h; sourceTree = "<group>"; };
+		08B09DFAE4DB118F404688DACD3DD369 /* Pods-Bricks_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bricks_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0F4481878B24FE4F11F93F82D184A91B /* BRKLayoutGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKLayoutGeometry.h; sourceTree = "<group>"; };
+		1A512720DCB2F796E2D8E13700523A70 /* Pods-Bricks_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bricks_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		313ED27C03A19F42C8FF176738C67D15 /* Pods-Bricks_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bricks_Example-resources.sh"; sourceTree = "<group>"; };
+		349DDC328F1B4F1E7074A1FB6EFDC63B /* Bricks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Bricks.h; sourceTree = "<group>"; };
+		399E91E8019CCDE7A151FD7E483A9F23 /* BRKLayoutValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKLayoutValue.h; sourceTree = "<group>"; };
+		4158492CDF40E48AE73E09C53D28598F /* Pods-Bricks_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bricks_Example-frameworks.sh"; sourceTree = "<group>"; };
+		42959F70758829F4FD7041BD7F1DD3A2 /* BRKSizeLayoutAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKSizeLayoutAction.m; sourceTree = "<group>"; };
+		474A9D1D8ABE3A8194A2E10A8E435A3F /* UIView+BRKLayoutMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+BRKLayoutMaker.h"; sourceTree = "<group>"; };
+		63327175881BF03F25D31F90895B2CC7 /* Bricks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bricks-dummy.m"; sourceTree = "<group>"; };
+		68515F56DA3C4D61BF03ECB1F89094CA /* Pods-Bricks_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bricks_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		68C9E2213BD7ADC5ABC775429718146E /* BRKAxisValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKAxisValue.m; sourceTree = "<group>"; };
+		6A079D7B779EA80A2264D173C2630D32 /* BRKLayoutMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKLayoutMaker.h; sourceTree = "<group>"; };
+		6B9A4905EF1B1A4532B515B4D77B4342 /* Bricks.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bricks.xcconfig; sourceTree = "<group>"; };
+		6C891211F89DFA484C5094CB38E7C4DA /* Pods-Bricks_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bricks_Tests-resources.sh"; sourceTree = "<group>"; };
+		6EB90E1B366EF0B8F08735FEC1DF753B /* Pods-Bricks_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bricks_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		76599B579376C5E680DC9D598AD67FA7 /* BRKSizeLayoutAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKSizeLayoutAction.h; sourceTree = "<group>"; };
+		7A5DD24A4A53219A98F1A36BFC68C693 /* BRKEdgeValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKEdgeValue.h; sourceTree = "<group>"; };
+		7C6B423DF9C2F5991295B8CF68AFD03C /* libPods-Bricks_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bricks_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E84584E9E26A4D4DEE87ED9C38DE9AA /* BRKEdgeLayoutAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKEdgeLayoutAction.m; sourceTree = "<group>"; };
+		81D8369E09CC8A7130C182E514779DC5 /* libBricks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBricks.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD75748DDA8B23B55570B34ED3FCD7E /* BRKCenterLayoutAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKCenterLayoutAction.m; sourceTree = "<group>"; };
+		9399A571CED16E99F56749AFD608266D /* BRKEdgeLayoutAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKEdgeLayoutAction.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A02C7852FF1C9B867A0970D6D1D31BA3 /* BRKLayoutMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKLayoutMaker.m; sourceTree = "<group>"; };
+		A0C5F55305D37D0CB62529F8E8595529 /* BRKEdgeValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKEdgeValue.m; sourceTree = "<group>"; };
+		A3672F620B97054825FB4AB36F747EC0 /* Pods-Bricks_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bricks_Tests-dummy.m"; sourceTree = "<group>"; };
+		A76A5B88C1F99577B5D71A366C958218 /* Pods-Bricks_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bricks_Example.release.xcconfig"; sourceTree = "<group>"; };
+		AB90DEF4D8D1B8738FDC6186FF95DD09 /* BRKBaseLayoutAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKBaseLayoutAction.h; sourceTree = "<group>"; };
+		B0EE5B70D3C199B2CB9B54BC24333F8F /* Pods-Bricks_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bricks_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BFBFF8D998D335CA2DBC1FA6DD40B3FE /* Pods-Bricks_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bricks_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C66334B5C88E6D4F78D8FDA504CB0724 /* BRKLayoutAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKLayoutAction.h; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DE588EADF74B97861F054CEF3C4A1B42 /* BRKBaseLayoutAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKBaseLayoutAction.m; sourceTree = "<group>"; };
+		DF47331E5D7E0C892C4BE6176ECB2C16 /* Bricks-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bricks-prefix.pch"; sourceTree = "<group>"; };
+		E2CA5C6F3C7FBE357AFA875EB856910F /* libPods-Bricks_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bricks_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E37E61BF590B4846AF56C02A6B57163A /* BRKCenterLayoutAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKCenterLayoutAction.h; sourceTree = "<group>"; };
+		E42034E9E98DD1487B1E6CE0AD159B03 /* UIView+BRKLayoutMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+BRKLayoutMaker.m"; sourceTree = "<group>"; };
+		E6F892CFD0BF65C22929E33C1BE865E4 /* Pods-Bricks_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bricks_Example-dummy.m"; sourceTree = "<group>"; };
+		E84944C3DA918D73872BB9A0578EB19A /* Pods-Bricks_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bricks_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		ECC99D89061AA2A14D641FBE5EAE5D86 /* Pods-Bricks_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bricks_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2FA80ECD0C94BD394EF74C38639ED97 /* BRKAxisValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BRKAxisValue.h; sourceTree = "<group>"; };
+		F5B1EB099CC9860A504294E60FDDDCD1 /* BRKLayoutGeometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKLayoutGeometry.m; sourceTree = "<group>"; };
+		FF7012A1DC9475D6F5FEB459BA1B422D /* BRKLayoutOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BRKLayoutOperation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3668E962529F8DA4DA3F219FB87B50D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87EB37FB6DF03003156FA16E851C95D7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA0ED7CF69572D14F3B72C9052DF1E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A852413FA0A8359E0423855888DE384A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C1DC855532A59D6A05681D9DE0CCD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D42D0C25DA000A871D187E1D3F05DC57 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		017E4ABD3FC0EE33087213C3267C9FFC /* Pods-Bricks_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BFBFF8D998D335CA2DBC1FA6DD40B3FE /* Pods-Bricks_Tests-acknowledgements.markdown */,
+				08B09DFAE4DB118F404688DACD3DD369 /* Pods-Bricks_Tests-acknowledgements.plist */,
+				A3672F620B97054825FB4AB36F747EC0 /* Pods-Bricks_Tests-dummy.m */,
+				1A512720DCB2F796E2D8E13700523A70 /* Pods-Bricks_Tests-frameworks.sh */,
+				6C891211F89DFA484C5094CB38E7C4DA /* Pods-Bricks_Tests-resources.sh */,
+				ECC99D89061AA2A14D641FBE5EAE5D86 /* Pods-Bricks_Tests.debug.xcconfig */,
+				6EB90E1B366EF0B8F08735FEC1DF753B /* Pods-Bricks_Tests.release.xcconfig */,
+			);
+			name = "Pods-Bricks_Tests";
+			path = "Target Support Files/Pods-Bricks_Tests";
+			sourceTree = "<group>";
+		};
+		1E223C7D0A3C84EAD670A30C800A31AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81D8369E09CC8A7130C182E514779DC5 /* libBricks.a */,
+				E2CA5C6F3C7FBE357AFA875EB856910F /* libPods-Bricks_Example.a */,
+				7C6B423DF9C2F5991295B8CF68AFD03C /* libPods-Bricks_Tests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BF749680EEC4652B7BC584B23745FE8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EC0974C7A6C30FA415328BC3DAE22EB /* Bricks */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		41EEC6E66D6394D4AA4577A07EC391E9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				845EFB09D1149A67D228622300838E0E /* Pods-Bricks_Example */,
+				017E4ABD3FC0EE33087213C3267C9FFC /* Pods-Bricks_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3BF749680EEC4652B7BC584B23745FE8 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				1E223C7D0A3C84EAD670A30C800A31AC /* Products */,
+				41EEC6E66D6394D4AA4577A07EC391E9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		845EFB09D1149A67D228622300838E0E /* Pods-Bricks_Example */ = {
+			isa = PBXGroup;
+			children = (
+				68515F56DA3C4D61BF03ECB1F89094CA /* Pods-Bricks_Example-acknowledgements.markdown */,
+				E84944C3DA918D73872BB9A0578EB19A /* Pods-Bricks_Example-acknowledgements.plist */,
+				E6F892CFD0BF65C22929E33C1BE865E4 /* Pods-Bricks_Example-dummy.m */,
+				4158492CDF40E48AE73E09C53D28598F /* Pods-Bricks_Example-frameworks.sh */,
+				313ED27C03A19F42C8FF176738C67D15 /* Pods-Bricks_Example-resources.sh */,
+				B0EE5B70D3C199B2CB9B54BC24333F8F /* Pods-Bricks_Example.debug.xcconfig */,
+				A76A5B88C1F99577B5D71A366C958218 /* Pods-Bricks_Example.release.xcconfig */,
+			);
+			name = "Pods-Bricks_Example";
+			path = "Target Support Files/Pods-Bricks_Example";
+			sourceTree = "<group>";
+		};
+		8BF34D73BCB79349F10218F535412917 /* Bricks */ = {
+			isa = PBXGroup;
+			children = (
+				349DDC328F1B4F1E7074A1FB6EFDC63B /* Bricks.h */,
+				F2FA80ECD0C94BD394EF74C38639ED97 /* BRKAxisValue.h */,
+				68C9E2213BD7ADC5ABC775429718146E /* BRKAxisValue.m */,
+				AB90DEF4D8D1B8738FDC6186FF95DD09 /* BRKBaseLayoutAction.h */,
+				DE588EADF74B97861F054CEF3C4A1B42 /* BRKBaseLayoutAction.m */,
+				E37E61BF590B4846AF56C02A6B57163A /* BRKCenterLayoutAction.h */,
+				8DD75748DDA8B23B55570B34ED3FCD7E /* BRKCenterLayoutAction.m */,
+				9399A571CED16E99F56749AFD608266D /* BRKEdgeLayoutAction.h */,
+				7E84584E9E26A4D4DEE87ED9C38DE9AA /* BRKEdgeLayoutAction.m */,
+				7A5DD24A4A53219A98F1A36BFC68C693 /* BRKEdgeValue.h */,
+				A0C5F55305D37D0CB62529F8E8595529 /* BRKEdgeValue.m */,
+				C66334B5C88E6D4F78D8FDA504CB0724 /* BRKLayoutAction.h */,
+				0F4481878B24FE4F11F93F82D184A91B /* BRKLayoutGeometry.h */,
+				F5B1EB099CC9860A504294E60FDDDCD1 /* BRKLayoutGeometry.m */,
+				6A079D7B779EA80A2264D173C2630D32 /* BRKLayoutMaker.h */,
+				A02C7852FF1C9B867A0970D6D1D31BA3 /* BRKLayoutMaker.m */,
+				00A1556A21F67E565E14839A21C7FF76 /* BRKLayoutOperation.h */,
+				FF7012A1DC9475D6F5FEB459BA1B422D /* BRKLayoutOperation.m */,
+				399E91E8019CCDE7A151FD7E483A9F23 /* BRKLayoutValue.h */,
+				76599B579376C5E680DC9D598AD67FA7 /* BRKSizeLayoutAction.h */,
+				42959F70758829F4FD7041BD7F1DD3A2 /* BRKSizeLayoutAction.m */,
+				02547329CD64BE78940D34227778092A /* BRKUtilities.h */,
+				474A9D1D8ABE3A8194A2E10A8E435A3F /* UIView+BRKLayoutMaker.h */,
+				E42034E9E98DD1487B1E6CE0AD159B03 /* UIView+BRKLayoutMaker.m */,
+			);
+			path = Bricks;
+			sourceTree = "<group>";
+		};
+		9EC0974C7A6C30FA415328BC3DAE22EB /* Bricks */ = {
+			isa = PBXGroup;
+			children = (
+				8BF34D73BCB79349F10218F535412917 /* Bricks */,
+				BC7A39A8FB760AFFB4974800BABF246B /* Support Files */,
+			);
+			name = Bricks;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC7A39A8FB760AFFB4974800BABF246B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A4905EF1B1A4532B515B4D77B4342 /* Bricks.xcconfig */,
+				63327175881BF03F25D31F90895B2CC7 /* Bricks-dummy.m */,
+				DF47331E5D7E0C892C4BE6176ECB2C16 /* Bricks-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Bricks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9F512D8207C7D5FA6A94EA5038F9059A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE29C04600593A1C7EF266189B89350E /* Bricks.h in Headers */,
+				B633150A1EB186DBD7ED0F0EA85FC54D /* BRKAxisValue.h in Headers */,
+				81CDC70F9A725F4406E5AA336C9BE526 /* BRKBaseLayoutAction.h in Headers */,
+				114979154670C2BC6AE43FC6E46FBDD5 /* BRKCenterLayoutAction.h in Headers */,
+				3F927A039FA3DCAE937D414B83D64DB7 /* BRKEdgeLayoutAction.h in Headers */,
+				01B5A2DEC6D8E187F12C25ED8B298B86 /* BRKEdgeValue.h in Headers */,
+				A21F5FE53F0629A2462AAAC311F8E172 /* BRKLayoutAction.h in Headers */,
+				A82AE49D652D57AC8DEF28D0893C2C09 /* BRKLayoutGeometry.h in Headers */,
+				0A9125C6D5ED75A99A7D1E96064085A6 /* BRKLayoutMaker.h in Headers */,
+				81D2909AF30213C8A13D4C47418D09BD /* BRKLayoutOperation.h in Headers */,
+				E57E4D3C98D0BED79E3855C5B106E275 /* BRKLayoutValue.h in Headers */,
+				99726D8F37DCB704D660EC8A9A3E9F23 /* BRKSizeLayoutAction.h in Headers */,
+				EC4393799FA08D536730ADB05C0A7582 /* BRKUtilities.h in Headers */,
+				D9AA4CA991223B555BBEC6DB51D12DCC /* UIView+BRKLayoutMaker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		221D586003CB188889BAE7EB530E196C /* Pods-Bricks_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA258577C062EBF899E1EE168FD69121 /* Build configuration list for PBXNativeTarget "Pods-Bricks_Tests" */;
+			buildPhases = (
+				A972632F9F99EC381ABD65A0ABEBD097 /* Sources */,
+				6CA0ED7CF69572D14F3B72C9052DF1E1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Bricks_Tests";
+			productName = "Pods-Bricks_Tests";
+			productReference = 7C6B423DF9C2F5991295B8CF68AFD03C /* libPods-Bricks_Tests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AE6C0295E0871E78B2E365E4047E08B9 /* Pods-Bricks_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB06C9C183526EDF3C42B1AF23E6EC0D /* Build configuration list for PBXNativeTarget "Pods-Bricks_Example" */;
+			buildPhases = (
+				171C6A01B2E4FA794F5750AE34C37F00 /* Sources */,
+				85C1DC855532A59D6A05681D9DE0CCD7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7378A52033FE5AC6182C84B0280503C4 /* PBXTargetDependency */,
+			);
+			name = "Pods-Bricks_Example";
+			productName = "Pods-Bricks_Example";
+			productReference = E2CA5C6F3C7FBE357AFA875EB856910F /* libPods-Bricks_Example.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC8C6AF867150D6E64FC12B365D6D773 /* Bricks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA36239F6F44D550273136AB5C2CEC9C /* Build configuration list for PBXNativeTarget "Bricks" */;
+			buildPhases = (
+				2DF904178F1FB3F09E028DE7D41CEDBA /* Sources */,
+				3668E962529F8DA4DA3F219FB87B50D0 /* Frameworks */,
+				9F512D8207C7D5FA6A94EA5038F9059A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bricks;
+			productName = Bricks;
+			productReference = 81D8369E09CC8A7130C182E514779DC5 /* libBricks.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 1E223C7D0A3C84EAD670A30C800A31AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC8C6AF867150D6E64FC12B365D6D773 /* Bricks */,
+				AE6C0295E0871E78B2E365E4047E08B9 /* Pods-Bricks_Example */,
+				221D586003CB188889BAE7EB530E196C /* Pods-Bricks_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		171C6A01B2E4FA794F5750AE34C37F00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01ADE03AABBBE49139AF0359F7D1E7E1 /* Pods-Bricks_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DF904178F1FB3F09E028DE7D41CEDBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F323330F27D198A9938511011B775E8 /* Bricks-dummy.m in Sources */,
+				88065350F48D3B02C023FC63CBFE62DD /* BRKAxisValue.m in Sources */,
+				F2630318E0E7A802ACC31487EFB5A603 /* BRKBaseLayoutAction.m in Sources */,
+				BFC3CCC6BA1803D76807ECF6A609E431 /* BRKCenterLayoutAction.m in Sources */,
+				478BA4535BEDC1422AA3AFD9F5477925 /* BRKEdgeLayoutAction.m in Sources */,
+				A43BDA7ECC1EEF1A699C40C77C1C7B60 /* BRKEdgeValue.m in Sources */,
+				5028C1F4525F1D33D62E78C1DD4DDAE9 /* BRKLayoutGeometry.m in Sources */,
+				436EC0CA9804B2C871D1F41344AFF374 /* BRKLayoutMaker.m in Sources */,
+				7A116BF379D0E57E879175320BFE5C7F /* BRKLayoutOperation.m in Sources */,
+				DB31B07CC309755F8A491A4FC390B20F /* BRKSizeLayoutAction.m in Sources */,
+				2261D97C676B7F03943CB304FA42953B /* UIView+BRKLayoutMaker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A972632F9F99EC381ABD65A0ABEBD097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCBFAB4BBE33F9FA6EECDFFC4C88F7FB /* Pods-Bricks_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7378A52033FE5AC6182C84B0280503C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bricks;
+			target = EC8C6AF867150D6E64FC12B365D6D773 /* Bricks */;
+			targetProxy = 04C76A1D034BAE02AAD6C0DE1BA10E12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3720FC18E71A6A293DC758FA4BE217D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B9A4905EF1B1A4532B515B4D77B4342 /* Bricks.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Bricks/Bricks-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4875C3CF3821D6F2F876CC9E30A68A9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0EE5B70D3C199B2CB9B54BC24333F8F /* Pods-Bricks_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		513319FC3022A490E3E5E646ADE8CD21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECC99D89061AA2A14D641FBE5EAE5D86 /* Pods-Bricks_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BB245A8BF25E4688E5072383DC41902E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A76A5B88C1F99577B5D71A366C958218 /* Pods-Bricks_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BFFB5CB3598E518502D28969E5A526C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B9A4905EF1B1A4532B515B4D77B4342 /* Bricks.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Bricks/Bricks-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F6BBA854B65D598209483542EF88C644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB90E1B366EF0B8F08735FEC1DF753B /* Pods-Bricks_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA36239F6F44D550273136AB5C2CEC9C /* Build configuration list for PBXNativeTarget "Bricks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFFB5CB3598E518502D28969E5A526C1 /* Debug */,
+				3720FC18E71A6A293DC758FA4BE217D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB06C9C183526EDF3C42B1AF23E6EC0D /* Build configuration list for PBXNativeTarget "Pods-Bricks_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4875C3CF3821D6F2F876CC9E30A68A9B /* Debug */,
+				BB245A8BF25E4688E5072383DC41902E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA258577C062EBF899E1EE168FD69121 /* Build configuration list for PBXNativeTarget "Pods-Bricks_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				513319FC3022A490E3E5E646ADE8CD21 /* Debug */,
+				F6BBA854B65D598209483542EF88C644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

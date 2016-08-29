@@ -1,0 +1,16 @@
+PODS:
+  - Bricks (0.1.0)
+
+DEPENDENCIES:
+  - Bricks (from `../`)
+
+EXTERNAL SOURCES:
+  Bricks:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Bricks: e1259f9eaabc9127931b7bdc700b9b919ec653e4
+
+PODFILE CHECKSUM: 76f9d4d76c2dcc3fb7c8e228e5ee7aa8516ba1bf
+
+COCOAPODS: 1.0.1
