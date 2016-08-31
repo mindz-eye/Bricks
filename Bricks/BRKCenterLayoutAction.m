@@ -38,7 +38,7 @@
 }
 
 - (void)setRectAttribute:(CGRect)rect {
-    self.targetPoint = CGRectGetCenter(rect);
+    self.targetPoint = BRKRectGetCenter(rect);
 }
 
 - (void)setViewAttribute:(UIView *)value {
@@ -62,10 +62,10 @@
     NSParameterAssert(self.axis != BRKAxisNone);
     
     if (self.axis & BRKAxisHorizontal) {
-        frame = CGRectSetCenterX(frame, self.targetPoint.x + self.insets.left - self.insets.right);
+        frame = BRKRectSetCenterX(frame, self.targetPoint.x + self.insets.left - self.insets.right);
     }
     if (self.axis & BRKAxisVertical) {
-        frame = CGRectSetCenterY(frame, self.targetPoint.y + self.insets.top - self.insets.bottom);
+        frame = BRKRectSetCenterY(frame, self.targetPoint.y + self.insets.top - self.insets.bottom);
     }
     return frame;
 }

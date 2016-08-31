@@ -17,35 +17,35 @@ typedef NS_OPTIONS(NSInteger, BRKAxis) {
     BRKAxisAll           = BRKAxisHorizontal | BRKAxisVertical
 };
 
-extern CGRect CGRectMoveTop(CGRect rect, CGFloat y);
-extern CGRect CGRectMoveBottom(CGRect rect, CGFloat y);
-extern CGRect CGRectMoveLeft(CGRect rect, CGFloat x);
-extern CGRect CGRectMoveRight(CGRect rect, CGFloat x);
+extern CGRect BRKRectMoveTop(CGRect rect, CGFloat y);
+extern CGRect BRKRectMoveBottom(CGRect rect, CGFloat y);
+extern CGRect BRKRectMoveLeft(CGRect rect, CGFloat x);
+extern CGRect BRKRectMoveRight(CGRect rect, CGFloat x);
 
-extern CGRect CGRectSetTop(CGRect rect, CGFloat y);
-extern CGRect CGRectSetBottom(CGRect rect, CGFloat y);
-extern CGRect CGRectSetLeft(CGRect rect, CGFloat x);
-extern CGRect CGRectSetRight(CGRect rect, CGFloat x);
+extern CGRect BRKRectSetTop(CGRect rect, CGFloat y);
+extern CGRect BRKRectSetBottom(CGRect rect, CGFloat y);
+extern CGRect BRKRectSetLeft(CGRect rect, CGFloat x);
+extern CGRect BRKRectSetRight(CGRect rect, CGFloat x);
 
-extern CGRect CGRectSetWidth(CGRect rect, CGFloat width);
-extern CGRect CGRectSetHeight(CGRect rect, CGFloat height);
+extern CGRect BRKRectSetWidth(CGRect rect, CGFloat width);
+extern CGRect BRKRectSetHeight(CGRect rect, CGFloat height);
 
-extern CGRect CGRectSetCenterX(CGRect rect, CGFloat x);
-extern CGRect CGRectSetCenterY(CGRect rect, CGFloat y);
-extern CGRect CGRectSetCenter(CGRect rect, CGPoint center);
+extern CGRect BRKRectSetCenterX(CGRect rect, CGFloat x);
+extern CGRect BRKRectSetCenterY(CGRect rect, CGFloat y);
+extern CGRect BRKRectSetCenter(CGRect rect, CGPoint center);
 
-extern CGPoint CGRectGetCenter(CGRect rect);
+extern CGPoint BRKRectGetCenter(CGRect rect);
 
-extern CGFloat CGRectGetEdge(CGRect rect, UIRectEdge edge);
+extern CGFloat BRKRectGetEdge(CGRect rect, UIRectEdge edge);
 
-extern CGFloat CGRectGetDistanceFromEdgeToEdgeInRect(CGRect rect, UIRectEdge edge, CGRect otherRect, UIRectEdge otherEdge);
+extern CGFloat BRKRectGetDistanceFromEdgeToEdgeInRect(CGRect rect, UIRectEdge edge, CGRect otherRect, UIRectEdge otherEdge);
 
-extern UIEdgeInsets UIEdgeInsetsByAddingEdgeInsets(UIEdgeInsets insets, UIEdgeInsets insetsToAdd);
+extern UIEdgeInsets BRKEdgeInsetsByAddingEdgeInsets(UIEdgeInsets insets, UIEdgeInsets insetsToAdd);
 
-extern BOOL CGSizeIsNull(CGSize size);
-extern BOOL CGPointIsNull(CGPoint point);
+extern BOOL BRKSizeIsNull(CGSize size);
+extern BOOL BRKPointIsNull(CGPoint point);
 
-extern const CGSize CGSizeNull;
-extern const CGPoint CGPointNull;
+extern const CGSize BRKSizeNull;
+extern const CGPoint BRKPointNull;
 
 NS_ASSUME_NONNULL_END

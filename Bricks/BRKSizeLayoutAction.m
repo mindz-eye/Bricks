@@ -49,10 +49,10 @@
     NSParameterAssert(self.axis != BRKAxisNone);
     
     if (self.axis & BRKAxisHorizontal) {
-        frame = CGRectSetWidth(frame, self.targetSize.width - self.insets.left - self.insets.right);
+        frame = BRKRectSetWidth(frame, self.targetSize.width - self.insets.left - self.insets.right);
     }
     if (self.axis & BRKAxisVertical) {
-        frame = CGRectSetHeight(frame, self.targetSize.height - self.insets.top - self.insets.bottom);
+        frame = BRKRectSetHeight(frame, self.targetSize.height - self.insets.top - self.insets.bottom);
     }
     return frame;
 }

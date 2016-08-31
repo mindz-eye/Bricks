@@ -14,13 +14,13 @@ typedef CGRect(*CGRectFunc)(CGRect, CGFloat);
 
 CGRectFunc CGRectFuncForEdgeAction(BRKEdgeActionType type, UIRectEdge edge) {
     if (edge == UIRectEdgeTop) {
-        return type == BRKEdgeActionTypeMove ? CGRectMoveTop : CGRectSetTop;
+        return type == BRKEdgeActionTypeMove ? BRKRectMoveTop : BRKRectSetTop;
     } else if (edge == UIRectEdgeLeft) {
-        return type == BRKEdgeActionTypeMove ? CGRectMoveLeft : CGRectSetLeft;
+        return type == BRKEdgeActionTypeMove ? BRKRectMoveLeft : BRKRectSetLeft;
     } else if (edge == UIRectEdgeBottom) {
-        return type == BRKEdgeActionTypeMove ? CGRectMoveBottom : CGRectSetBottom;
+        return type == BRKEdgeActionTypeMove ? BRKRectMoveBottom : BRKRectSetBottom;
     } else if (edge == UIRectEdgeRight) {
-        return type == BRKEdgeActionTypeMove ? CGRectMoveRight : CGRectSetRight;
+        return type == BRKEdgeActionTypeMove ? BRKRectMoveRight : BRKRectSetRight;
     } else {
         NSCParameterAssert(NO);
         return NULL;
@@ -47,16 +47,16 @@ CGRectFunc CGRectFuncForEdgeAction(BRKEdgeActionType type, UIRectEdge edge) {
     NSParameterAssert(self.edges != UIRectEdgeNone);
     
     if (self.edges & UIRectEdgeTop) {
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(value, 0, 0, 0));
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(value, 0, 0, 0));
     }
     if (self.edges & UIRectEdgeLeft) {
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, value, 0, 0));
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, value, 0, 0));
     }
     if (self.edges & UIRectEdgeBottom) {
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, -value, 0));
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, -value, 0));
     }
     if (self.edges & UIRectEdgeRight) {
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, 0, -value));
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, 0, -value));
     }
 }
 
@@ -69,20 +69,20 @@ CGRectFunc CGRectFuncForEdgeAction(BRKEdgeActionType type, UIRectEdge edge) {
 
     CGFloat value;
     if (self.edges & UIRectEdgeTop) {
-        value = CGRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeTop, self.targetFrame, UIRectEdgeTop);
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(value, 0, 0, 0));
+        value = BRKRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeTop, self.targetFrame, UIRectEdgeTop);
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(value, 0, 0, 0));
     }
     if (self.edges & UIRectEdgeLeft) {
-        value = CGRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeLeft, self.targetFrame, UIRectEdgeLeft);
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, value, 0, 0));
+        value = BRKRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeLeft, self.targetFrame, UIRectEdgeLeft);
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, value, 0, 0));
     }
     if (self.edges & UIRectEdgeBottom) {
-        value = CGRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeBottom, self.targetFrame, UIRectEdgeBottom);
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, value, 0));
+        value = BRKRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeBottom, self.targetFrame, UIRectEdgeBottom);
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, value, 0));
     }
     if (self.edges & UIRectEdgeRight) {
-        value = CGRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeRight, self.targetFrame, UIRectEdgeRight);
-        self.insets = UIEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, 0, value));
+        value = BRKRectGetDistanceFromEdgeToEdgeInRect(viewFrame, UIRectEdgeRight, self.targetFrame, UIRectEdgeRight);
+        self.insets = BRKEdgeInsetsByAddingEdgeInsets(self.insets, UIEdgeInsetsMake(0, 0, 0, value));
     }
 }
 
@@ -90,7 +90,7 @@ CGRectFunc CGRectFuncForEdgeAction(BRKEdgeActionType type, UIRectEdge edge) {
     NSParameterAssert(attr.edge != UIRectEdgeNone);
     
     CGRect viewFrame = [attr.view convertRect:attr.view.bounds toView:self.view.superview];
-    CGFloat value = CGRectGetDistanceFromEdgeToEdgeInRect(viewFrame, attr.edge, self.targetFrame, self.edges);
+    CGFloat value = BRKRectGetDistanceFromEdgeToEdgeInRect(viewFrame, attr.edge, self.targetFrame, self.edges);
     
     [self setNumberAttribute:value];
 }
