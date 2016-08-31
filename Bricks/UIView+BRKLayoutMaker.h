@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) id<BRKLayoutValue> brk_centerX;
 @property (nonatomic, strong, readonly) id<BRKLayoutValue> brk_centerY;
 
-- (void)brk_make:(void(^)(BRKLayoutMaker *maker))block;
+- (void)brk_make:(void(^)(BRKLayoutMaker *make))block;
 
 @end
 
