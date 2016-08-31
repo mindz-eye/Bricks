@@ -42,6 +42,11 @@
             CGRect rect;
             [attr getValue:&rect];
             [self setRectAttribute:rect];
+            
+        } else if (strcmp([attr objCType], @encode(UIEdgeInsets)) == 0) {
+            UIEdgeInsets insets;
+            [attr getValue:&insets];
+            [self setInsets:insets];
         }
         
     } else if ([attr isKindOfClass:[BRKEdgeValue class]]) {

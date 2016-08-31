@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BRKLayoutOperation * (^)(CGSize offset))sizeOffset;
 - (BRKLayoutOperation * (^)(CGPoint offset))centerOffset;
 - (BRKLayoutOperation * (^)(CGFloat offset))offset;
+- (BRKLayoutOperation * (^)(NSValue *value))valueOffset;
 
 - (BRKLayoutOperation * (^)(id attr))moveTo;
 - (BRKLayoutOperation * (^)(id attr))resizeTo;

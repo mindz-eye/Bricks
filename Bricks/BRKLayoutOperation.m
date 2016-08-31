@@ -101,6 +101,15 @@
     };
 }
 
+- (BRKLayoutOperation * (^)(NSValue *value))valueOffset {
+    return ^BRKLayoutOperation *(NSValue *value) {
+        for (id<BRKLayoutAction> action in self.actions.allValues) {
+            [action setAttribute:value];
+        }
+        return self;
+    };
+}
+
 - (BRKLayoutOperation * (^)(id))moveTo {
     return ^BRKLayoutOperation *(id attr) {
         BRKEdgeLayoutAction *edgeAction = [self actionByClass:[BRKEdgeLayoutAction class]];
