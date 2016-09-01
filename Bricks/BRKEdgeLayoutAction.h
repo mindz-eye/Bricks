@@ -19,7 +19,6 @@ typedef NS_ENUM(NSInteger, BRKEdgeActionType) {
 
 @property (nonatomic, assign) UIRectEdge edges;
 @property (nonatomic, assign) BRKEdgeActionType type;
-@property (nonatomic, assign) CGRect targetFrame;
 
 - (instancetype)initWithView:(UIView *)view edges:(UIRectEdge)edges NS_DESIGNATED_INITIALIZER;
 

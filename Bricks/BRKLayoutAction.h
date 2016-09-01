@@ -10,12 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BRKEdgeValue;
+@class BRKAxisValue;
+
+
 @protocol BRKLayoutAction <NSObject>
 
-@property (nonatomic, strong, readonly) UIView *view;
-@property (nonatomic, assign) UIEdgeInsets insets;
-
-- (void)setAttribute:(id)attr;
+- (void)setOffset:(CGFloat)offset;
+- (void)setValueOffset:(NSValue *)value;
+- (void)setCenterOffset:(CGPoint)centerOffset;
+- (void)setSize:(CGSize)size;
+- (void)setEdgeInsets:(UIEdgeInsets)edgeInsets;
+- (void)setView:(UIView *)view;
+- (void)setEdge:(BRKEdgeValue *)edge;
+- (void)setAxis:(BRKAxisValue *)axis;
+- (void)setAttribute:(id)attribute;
 
 - (CGRect)applyToFrame:(CGRect)frame;
 

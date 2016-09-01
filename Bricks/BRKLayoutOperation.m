@@ -66,9 +66,9 @@
 }
 
 - (BRKLayoutOperation * (^)(UIEdgeInsets))insets {
-    return ^BRKLayoutOperation *(UIEdgeInsets value) {
+    return ^BRKLayoutOperation *(UIEdgeInsets insets) {
         for (id<BRKLayoutAction> action in self.actions.allValues) {
-            action.insets = value;
+            [action setEdgeInsets:insets];
         }
         return self;
     };
@@ -77,7 +77,7 @@
 - (BRKLayoutOperation * (^)(CGSize))sizeOffset {
     return ^BRKLayoutOperation *(CGSize size) {
         for (id<BRKLayoutAction> action in self.actions.allValues) {
-            action.insets = UIEdgeInsetsMake(size.height, size.width, 0, 0);
+            [action setSize:size];
         }
         return self;
     };
@@ -86,7 +86,7 @@
 - (BRKLayoutOperation * (^)(CGFloat))offset {
     return ^BRKLayoutOperation *(CGFloat offset) {
         for (id<BRKLayoutAction> action in self.actions.allValues) {
-            [action setAttribute:@(offset)];
+            [action setOffset:offset];
         }
         return self;
     };
@@ -95,7 +95,7 @@
 - (BRKLayoutOperation * (^)(CGPoint))centerOffset {
     return ^BRKLayoutOperation *(CGPoint centerOffset) {
         for (id<BRKLayoutAction> action in self.actions.allValues) {
-            [action setAttribute:[NSValue valueWithCGPoint:centerOffset]];
+            [action setCenterOffset:centerOffset];
         }
         return self;
     };
@@ -104,7 +104,7 @@
 - (BRKLayoutOperation * (^)(NSValue *value))valueOffset {
     return ^BRKLayoutOperation *(NSValue *value) {
         for (id<BRKLayoutAction> action in self.actions.allValues) {
-            [action setAttribute:value];
+            [action setValueOffset:value];
         }
         return self;
     };

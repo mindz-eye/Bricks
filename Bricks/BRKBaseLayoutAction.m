@@ -12,79 +12,88 @@
 
 @implementation BRKBaseLayoutAction
 
-@synthesize view = _view;
-@synthesize insets = _insets;
-
 - (instancetype)initWithView:(UIView *)view {
     self = [super init];
     if (self) {
-        _view = view;
+        _ownerView = view;
     }
     return self;
 }
 
 - (void)setAttribute:(id)attr {
     if ([attr isKindOfClass:[NSNumber class]]) {
-        [self setNumberAttribute:[attr doubleValue]];
+        [self setView:self.ownerView.superview];
+        [self setOffset:[attr doubleValue]];
         
     } else if ([attr isKindOfClass:[NSValue class]]) {
         if (strcmp([attr objCType], @encode(CGPoint)) == 0) {
-            CGPoint point;
-            [attr getValue:&point];
-            [self setPointAttribute:point];
+            [self setView:self.ownerView.superview];
+            [self setCenterOffset:[attr CGPointValue]];
             
         } else if (strcmp([attr objCType], @encode(CGSize)) == 0) {
-            CGSize size;
-            [attr getValue:&size];
-            [self setSizeAttribute:size];
-            
-        } else if (strcmp([attr objCType], @encode(CGRect)) == 0) {
-            CGRect rect;
-            [attr getValue:&rect];
-            [self setRectAttribute:rect];
+            [self setView:self.ownerView.superview];
+            [self setSize:[attr CGSizeValue]];
             
         } else if (strcmp([attr objCType], @encode(UIEdgeInsets)) == 0) {
-            UIEdgeInsets insets;
-            [attr getValue:&insets];
-            [self setInsets:insets];
+            [self setView:self.ownerView.superview];
+            [self setEdgeInsets:[attr UIEdgeInsetsValue]];
         }
         
     } else if ([attr isKindOfClass:[BRKEdgeValue class]]) {
-        [self setEdgeAttribute:attr];
+        [self setEdge:attr];
         
     } else if ([attr isKindOfClass:[BRKAxisValue class]]) {
-        [self setAxisAttribute:attr];
+        [self setAxis:attr];
         
     } else if ([attr isKindOfClass:[UIView class]]) {
-        [self setViewAttribute:attr];
+        [self setView:attr];
     }
 }
 
-- (void)setNumberAttribute:(CGFloat)value {
+- (void)setOffset:(CGFloat)offset {
     NSParameterAssert(NO);
 }
 
-- (void)setPointAttribute:(CGPoint)point {
+- (void)setValueOffset:(NSValue *)value {
+    if ([value isKindOfClass:[NSNumber class]]) {
+        [self setOffset:[(NSNumber *)value doubleValue]];
+        
+    } else if (strcmp([value objCType], @encode(CGPoint)) == 0) {
+            [self setCenterOffset:value.CGPointValue];
+            
+    } else if (strcmp([value objCType], @encode(UIEdgeInsets)) == 0) {
+        [self setEdgeInsets:value.UIEdgeInsetsValue];
+        
+    } else {
+        NSParameterAssert(NO);
+    }
+}
+
+- (void)setCenterOffset:(CGPoint)centerOffset {
     NSParameterAssert(NO);
 }
 
-- (void)setSizeAttribute:(CGSize)size {
+- (void)setSize:(CGSize)size {
     NSParameterAssert(NO);
 }
 
-- (void)setRectAttribute:(CGRect)rect {
+- (void)setRect:(CGRect)rect {
     NSParameterAssert(NO);
 }
 
-- (void)setViewAttribute:(UIView *)value {
+- (void)setEdgeInsets:(UIEdgeInsets)edgeInsets {
     NSParameterAssert(NO);
 }
 
-- (void)setEdgeAttribute:(BRKEdgeValue *)value {
+- (void)setView:(UIView *)view {
     NSParameterAssert(NO);
 }
 
-- (void)setAxisAttribute:(BRKAxisValue *)value {
+- (void)setEdge:(BRKEdgeValue *)edge {
+    NSParameterAssert(NO);
+}
+
+- (void)setAxis:(BRKAxisValue *)axis {
     NSParameterAssert(NO);
 }
 

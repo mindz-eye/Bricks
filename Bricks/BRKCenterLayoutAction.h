@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BRKCenterLayoutAction : BRKBaseLayoutAction
 
 @property (nonatomic, assign) BRKAxis axis;
-@property (nonatomic, assign) CGPoint targetPoint;
 
 - (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis NS_DESIGNATED_INITIALIZER;
 

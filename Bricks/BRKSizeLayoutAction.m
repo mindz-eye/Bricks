@@ -9,13 +9,19 @@
 #import "BRKSizeLayoutAction.h"
 #import "BRKLayoutGeometry.h"
 
+@interface BRKSizeLayoutAction ()
+
+@property (nonatomic, assign) CGSize result;
+
+@end
+
 @implementation BRKSizeLayoutAction
 
 - (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis {
     self = [super initWithView:view];
     if (self) {
         _axis = axis;
-        _targetSize = view.superview.bounds.size;
+        _result = view.bounds.size;
     }
     return self;
 }
@@ -24,35 +30,31 @@
     return [self initWithView:view axis:BRKAxisNone];
 }
 
-- (void)setNumberAttribute:(CGFloat)value {
+- (void)setOffset:(CGFloat)value {
     if (self.axis & BRKAxisHorizontal) {
-        self.targetSize = CGSizeMake(value, self.targetSize.height);
+        self.result = CGSizeMake(value, self.result.height);
     }
     if (self.axis & BRKAxisVertical) {
-        self.targetSize = CGSizeMake(self.targetSize.width, value);
+        self.result = CGSizeMake(self.result.width, value);
     }
 }
 
-- (void)setSizeAttribute:(CGSize)size {
-    self.targetSize = size;
+- (void)setSize:(CGSize)size {
+    self.result = size;
 }
 
-- (void)setRectAttribute:(CGRect)rect {
-    self.targetSize = rect.size;
-}
-
-- (void)setViewAttribute:(UIView *)view {
-    self.targetSize = view.bounds.size;
+- (void)setView:(UIView *)view {
+    self.result = view.bounds.size;
 }
 
 - (CGRect)applyToFrame:(CGRect)frame {
     NSParameterAssert(self.axis != BRKAxisNone);
     
     if (self.axis & BRKAxisHorizontal) {
-        frame = BRKRectSetWidth(frame, self.targetSize.width - self.insets.left - self.insets.right);
+        frame = BRKRectSetWidth(frame, self.result.width);
     }
     if (self.axis & BRKAxisVertical) {
-        frame = BRKRectSetHeight(frame, self.targetSize.height - self.insets.top - self.insets.bottom);
+        frame = BRKRectSetHeight(frame, self.result.height);
     }
     return frame;
 }

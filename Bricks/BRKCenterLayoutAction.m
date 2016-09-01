@@ -9,13 +9,19 @@
 #import "BRKCenterLayoutAction.h"
 #import "BRKAxisValue.h"
 
+@interface BRKCenterLayoutAction ()
+
+@property (nonatomic, assign) CGPoint result;
+
+@end
+
 @implementation BRKCenterLayoutAction
 
 - (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis {
     self = [super initWithView:view];
     if (self) {
         _axis = axis;
-        _targetPoint = view.center;
+        _result = view.center;
     }
     return self;
 }
@@ -24,48 +30,44 @@
     return [self initWithView:view axis:BRKAxisNone];
 }
 
-- (void)setNumberAttribute:(CGFloat)value {
+- (void)setOffset:(CGFloat)offset {
     if (self.axis & BRKAxisHorizontal) {
-        self.targetPoint = CGPointMake(value, self.targetPoint.y);
+        self.result = CGPointMake(offset, self.result.y);
     }
     if (self.axis & BRKAxisVertical) {
-        self.targetPoint = CGPointMake(self.targetPoint.x, value);
+        self.result = CGPointMake(self.result.x, offset);
     }
 }
 
-- (void)setPointAttribute:(CGPoint)point {
-    self.targetPoint = point;
+- (void)setCenterOffset:(CGPoint)resultOffset {
+    self.result = resultOffset;
 }
 
-- (void)setRectAttribute:(CGRect)rect {
-    self.targetPoint = BRKRectGetCenter(rect);
+- (void)setView:(UIView *)view {
+    self.result = [view convertPoint:view.center toView:self.ownerView];
 }
 
-- (void)setViewAttribute:(UIView *)value {
-    self.targetPoint = [value convertPoint:value.center toView:self.view];
-}
-
-- (void)setAxisAttribute:(BRKAxisValue *)attr {
-    NSParameterAssert(attr.axis != BRKAxisNone);
+- (void)setAxis:(BRKAxisValue *)axis {
+    NSParameterAssert(axis.axis != BRKAxisNone);
     
     CGFloat value;
     
-    if (attr.axis & BRKAxisHorizontal) {
-        value = [self.view.superview convertPoint:attr.view.center fromView:attr.view].x;
+    if (axis.axis & BRKAxisHorizontal) {
+        value = [self.ownerView.superview convertPoint:axis.view.center fromView:axis.view].x;
     } else {
-        value = [self.view.superview convertPoint:attr.view.center fromView:attr.view].y;
+        value = [self.ownerView.superview convertPoint:axis.view.center fromView:axis.view].y;
     }
-    [self setNumberAttribute:value];
+    [self setOffset:value];
 }
                  
 - (CGRect)applyToFrame:(CGRect)frame {
     NSParameterAssert(self.axis != BRKAxisNone);
     
     if (self.axis & BRKAxisHorizontal) {
-        frame = BRKRectSetCenterX(frame, self.targetPoint.x + self.insets.left - self.insets.right);
+        frame = BRKRectSetCenterX(frame, self.result.x);
     }
     if (self.axis & BRKAxisVertical) {
-        frame = BRKRectSetCenterY(frame, self.targetPoint.y + self.insets.top - self.insets.bottom);
+        frame = BRKRectSetCenterY(frame, self.result.y);
     }
     return frame;
 }
