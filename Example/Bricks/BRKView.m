@@ -17,6 +17,7 @@
 @property (nonatomic, strong, readonly) UIView *second;
 @property (nonatomic, strong, readonly) UIView *third;
 @property (nonatomic, strong, readonly) UIView *forth;
+@property (nonatomic, strong, readonly) UIView *border;
 
 @end
 
@@ -59,6 +60,11 @@
     _forth = [[UIView alloc] init];
     self.forth.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:self.forth];
+    
+    _border = [[UIView alloc] init];
+    self.border.layer.borderColor = [UIColor redColor].CGColor;
+    self.border.layer.borderWidth = 1.0;
+    [self addSubview:self.border];
 }
 
 - (void)layoutSubviews {
@@ -67,6 +73,10 @@
     [self.first brk_make:^(BRKLayoutMaker * _Nonnull make) {
         make.left.top.moveTo(15);
         make.width.height.resizeTo(90);
+    }];
+    
+    [self.border brk_make:^(BRKLayoutMaker * _Nonnull make) {
+        make.edges.resizeTo(self.first);
     }];
     
     [self.second brk_make:^(BRKLayoutMaker * _Nonnull make) {
