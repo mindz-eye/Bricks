@@ -17,16 +17,6 @@ typedef NS_OPTIONS(NSInteger, BRKAxis) {
     BRKAxisAll           = BRKAxisHorizontal | BRKAxisVertical
 };
 
-extern CGRect BRKRectMoveTop(CGRect rect, CGFloat y);
-extern CGRect BRKRectMoveBottom(CGRect rect, CGFloat y);
-extern CGRect BRKRectMoveLeft(CGRect rect, CGFloat x);
-extern CGRect BRKRectMoveRight(CGRect rect, CGFloat x);
-
-extern CGRect BRKRectSetTop(CGRect rect, CGFloat y);
-extern CGRect BRKRectSetBottom(CGRect rect, CGFloat y);
-extern CGRect BRKRectSetLeft(CGRect rect, CGFloat x);
-extern CGRect BRKRectSetRight(CGRect rect, CGFloat x);
-
 extern CGRect BRKRectSetWidth(CGRect rect, CGFloat width);
 extern CGRect BRKRectSetHeight(CGRect rect, CGFloat height);
 
@@ -36,16 +26,11 @@ extern CGRect BRKRectSetCenter(CGRect rect, CGPoint center);
 
 extern CGPoint BRKRectGetCenter(CGRect rect);
 
+extern CGRect BRKRectSetEdge(CGRect rect, UIRectEdge edge, CGFloat value);
+extern CGRect BRKRectMoveEdge(CGRect rect, UIRectEdge edge, CGFloat value);
+
 extern CGFloat BRKRectGetEdge(CGRect rect, UIRectEdge edge);
 
-extern CGFloat BRKRectGetDistanceFromEdgeToEdgeInRect(CGRect rect, UIRectEdge edge, CGRect otherRect, UIRectEdge otherEdge);
-
-extern UIEdgeInsets BRKEdgeInsetsByAddingEdgeInsets(UIEdgeInsets insets, UIEdgeInsets insetsToAdd);
-
-extern BOOL BRKSizeIsNull(CGSize size);
-extern BOOL BRKPointIsNull(CGPoint point);
-
-extern const CGSize BRKSizeNull;
-extern const CGPoint BRKPointNull;
+extern CGRect BRKRectApplyEdgeInsets(CGRect rect, UIEdgeInsets insets);
 
 NS_ASSUME_NONNULL_END

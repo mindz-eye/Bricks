@@ -8,44 +8,44 @@
 
 #import "BRKLayoutGeometry.h"
 
-CGRect BRKRectMoveTop(CGRect rect, CGFloat y) {
+static inline CGRect BRKRectMoveTop(CGRect rect, CGFloat y) {
     rect.origin.y = y;
     return rect;
 }
 
-CGRect BRKRectMoveBottom(CGRect rect, CGFloat y) {
+static inline CGRect BRKRectMoveBottom(CGRect rect, CGFloat y) {
     rect.origin.y = rect.origin.y + y - rect.size.height;
     return rect;
 }
 
-CGRect BRKRectMoveLeft(CGRect rect, CGFloat x) {
+static inline CGRect BRKRectMoveLeft(CGRect rect, CGFloat x) {
     rect.origin.x = x;
     return rect;
 }
 
-CGRect BRKRectMoveRight(CGRect rect, CGFloat x) {
+static inline CGRect BRKRectMoveRight(CGRect rect, CGFloat x) {
     rect.origin.x = rect.origin.x + x - rect.size.width;
     return rect;
 }
 
-CGRect BRKRectSetTop(CGRect rect, CGFloat y) {
+static inline CGRect BRKRectSetTop(CGRect rect, CGFloat y) {
     rect.size.height += rect.origin.y - y;
     rect.origin.y = y;
     return rect;
 }
 
-CGRect BRKRectSetLeft(CGRect rect, CGFloat x) {
+static inline CGRect BRKRectSetLeft(CGRect rect, CGFloat x) {
     rect.size.width += rect.origin.x - x;
     rect.origin.x = x;
     return rect;
 }
 
-CGRect BRKRectSetBottom(CGRect rect, CGFloat y) {
+static inline CGRect BRKRectSetBottom(CGRect rect, CGFloat y) {
     rect.size.height += y - (rect.origin.y + rect.size.height);
     return rect;
 }
 
-CGRect BRKRectSetRight(CGRect rect, CGFloat x) {
+static inline CGRect BRKRectSetRight(CGRect rect, CGFloat x) {
     rect.size.width += x - (rect.origin.x + rect.size.width);
     return rect;
 }
@@ -90,23 +90,29 @@ CGFloat BRKRectGetEdge(CGRect rect, UIRectEdge edge) {
     return CGFLOAT_MAX;
 }
 
-CGFloat BRKRectGetDistanceFromEdgeToEdgeInRect(CGRect rect, UIRectEdge edge, CGRect otherRect, UIRectEdge otherEdge) {
-    return BRKRectGetEdge(rect, edge) - BRKRectGetEdge(otherRect, otherEdge);
+CGRect BRKRectSetEdge(CGRect rect, UIRectEdge edge, CGFloat value) {
+    switch (edge) {
+        case UIRectEdgeTop: return BRKRectSetTop(rect, value);
+        case UIRectEdgeLeft: return BRKRectSetLeft(rect, value);
+        case UIRectEdgeBottom: return BRKRectSetBottom(rect, value);
+        case UIRectEdgeRight: return BRKRectSetRight(rect, value);
+        default: NSCParameterAssert(NO);
+    }
+    return CGRectNull;
 }
 
-UIEdgeInsets BRKEdgeInsetsByAddingEdgeInsets(UIEdgeInsets insets, UIEdgeInsets insetsToAdd) {
-    return UIEdgeInsetsMake(insets.top + insetsToAdd.top, insets.left + insetsToAdd.left,
-                            insets.bottom + insetsToAdd.bottom, insets.right + insetsToAdd.right);
+CGRect BRKRectMoveEdge(CGRect rect, UIRectEdge edge, CGFloat value) {
+    switch (edge) {
+        case UIRectEdgeTop: return BRKRectMoveTop(rect, value);
+        case UIRectEdgeLeft: return BRKRectMoveLeft(rect, value);
+        case UIRectEdgeBottom: return BRKRectMoveBottom(rect, value);
+        case UIRectEdgeRight: return BRKRectMoveRight(rect, value);
+        default: NSCParameterAssert(NO);
+    }
+    return CGRectNull;
 }
 
-const CGSize BRKSizeNull = { CGFLOAT_MAX, CGFLOAT_MAX };
-
-const CGPoint BRKPointNull = { CGFLOAT_MAX, CGFLOAT_MAX };
-
-BOOL BRKSizeIsNull(CGSize size) {
-    return CGSizeEqualToSize(size, BRKSizeNull);
-}
-
-BOOL BRKPointIsNull(CGPoint point) {
-    return CGPointEqualToPoint(point, BRKPointNull);
+CGRect BRKRectApplyEdgeInsets(CGRect rect, UIEdgeInsets insets) {
+    return CGRectMake(rect.origin.x + insets.left, rect.origin.y + insets.top,
+                      rect.size.width - insets.left - insets.right, rect.size.height - insets.top - insets.bottom);
 }
