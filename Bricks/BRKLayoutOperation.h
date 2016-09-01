@@ -21,15 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (BRKLayoutOperation * (^)(UIEdgeInsets insets))insets;
-- (BRKLayoutOperation * (^)(CGSize offset))sizeOffset;
-- (BRKLayoutOperation * (^)(CGPoint offset))centerOffset;
-- (BRKLayoutOperation * (^)(CGFloat offset))offset;
-- (BRKLayoutOperation * (^)(NSValue *value))valueOffset;
-
-- (BRKLayoutOperation * (^)(id attr))moveTo;
-- (BRKLayoutOperation * (^)(id attr))resizeTo;
-
 - (BRKLayoutOperation *)left;
 - (BRKLayoutOperation *)top;
 - (BRKLayoutOperation *)right;
@@ -39,8 +30,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (BRKLayoutOperation *)centerX;
 - (BRKLayoutOperation *)centerY;
 
+- (BRKLayoutOperation * (^)(id attr))moveTo;
+- (BRKLayoutOperation * (^)(id attr))resizeTo;
+
 - (BRKLayoutOperation *)with;
 - (BRKLayoutOperation *)and;
+
+- (BRKLayoutOperation * (^)(UIEdgeInsets insets))insets;
+- (BRKLayoutOperation * (^)(CGSize offset))sizeOffset;
+- (BRKLayoutOperation * (^)(CGPoint offset))centerOffset;
+- (BRKLayoutOperation * (^)(CGFloat offset))offset;
+- (BRKLayoutOperation * (^)(NSValue *value))valueOffset;
 
 @end
 
