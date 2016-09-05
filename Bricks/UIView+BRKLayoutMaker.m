@@ -54,7 +54,7 @@
     BRKLayoutMaker *make = [self brk_objectForKey:_cmd factoryBlock:^id{
         return [[BRKLayoutMaker alloc] initWithView:self];
     }];
-    [self sizeToFit];    
+    [make begin];
     block(make);
     [make commit];
 }

@@ -37,7 +37,6 @@
     self = [super init];
     if (self) {
         _view = view;
-        _frame = view.frame;
     }
     return self;
 }
@@ -52,8 +51,6 @@
 }
 
 - (BRKLayoutOperation *)beginOperation {
-    NSParameterAssert(self.view.superview);
-    
     [self applyPendingOperationIfNeeded];
     self.pendingOperation = [[BRKLayoutOperation alloc] initWithView:self.view];
     return self.pendingOperation;
@@ -122,6 +119,11 @@
 
 - (BRKLayoutOperation *)center {
     return [self beginOperationWithCenterAxis:BRKAxisAll];
+}
+
+- (void)begin {
+    [self.view sizeToFit];
+    self.frame = self.view.frame;
 }
 
 - (void)commit {
