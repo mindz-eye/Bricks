@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BRKAxis axis;
 
-- (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis initialValue:(CGSize)initialValue NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)initWithView:(UIView *)view NS_UNAVAILABLE;
 
 @end
 

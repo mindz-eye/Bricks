@@ -20,7 +20,9 @@ typedef NS_ENUM(NSInteger, BRKEdgeActionType) {
 @property (nonatomic, assign) UIRectEdge edges;
 @property (nonatomic, assign) BRKEdgeActionType type;
 
-- (instancetype)initWithView:(UIView *)view edges:(UIRectEdge)edges NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithView:(UIView *)view edges:(UIRectEdge)edges initialValue:(CGRect)initialValue NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)initWithView:(UIView *)view NS_UNAVAILABLE;
 
 @end
 

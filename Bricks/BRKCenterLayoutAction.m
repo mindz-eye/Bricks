@@ -17,25 +17,21 @@
 
 @implementation BRKCenterLayoutAction
 
-- (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis {
+- (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis initialValue:(CGPoint)initialValue {
     self = [super initWithView:view];
     if (self) {
         _axis = axis;
-        _result = view.center;
+        _result = initialValue;
     }
     return self;
 }
 
-- (instancetype)initWithView:(UIView *)view {
-    return [self initWithView:view axis:BRKAxisNone];
-}
-
 - (void)setOffset:(CGFloat)offset {
     if (self.axis & BRKAxisHorizontal) {
-        self.result = CGPointMake(offset, self.result.y);
+        self.result = CGPointMake(self.result.x + offset, self.result.y);
     }
     if (self.axis & BRKAxisVertical) {
-        self.result = CGPointMake(self.result.x, offset);
+        self.result = CGPointMake(self.result.x, self.result.y + offset);
     }
 }
 
@@ -44,7 +40,7 @@
 }
 
 - (void)setView:(UIView *)view {
-    self.result = [view convertPoint:view.center toView:self.ownerView];
+    self.result = [view.superview convertPoint:view.center toView:self.ownerView.superview];
 }
 
 - (void)setAxis:(BRKAxisValue *)axis {

@@ -19,17 +19,13 @@
 
 @implementation BRKEdgeLayoutAction
 
-- (instancetype)initWithView:(UIView *)view edges:(UIRectEdge)edges {
+- (instancetype)initWithView:(UIView *)view edges:(UIRectEdge)edges initialValue:(CGRect)initialValue {
     self = [super initWithView:view];
     if (self) {
         _edges = edges;
-        _result = view.frame;
+        _result = initialValue;
     }
     return self;
-}
-
-- (instancetype)initWithView:(UIView *)view {
-    return [self initWithView:view edges:UIRectEdgeNone];
 }
 
 - (CGRect)updateEdge:(UIRectEdge)edge inRect:(CGRect)rect withValue:(CGFloat)value {

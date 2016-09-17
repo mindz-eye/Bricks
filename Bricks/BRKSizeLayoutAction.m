@@ -17,17 +17,13 @@
 
 @implementation BRKSizeLayoutAction
 
-- (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis {
+- (instancetype)initWithView:(UIView *)view axis:(BRKAxis)axis initialValue:(CGSize)initialValue {
     self = [super initWithView:view];
     if (self) {
         _axis = axis;
         _result = view.bounds.size;
     }
     return self;
-}
-
-- (instancetype)initWithView:(UIView *)view {
-    return [self initWithView:view axis:BRKAxisNone];
 }
 
 - (void)setOffset:(CGFloat)value {

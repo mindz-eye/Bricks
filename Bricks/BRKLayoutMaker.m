@@ -14,7 +14,7 @@
 
 @interface BRKLayoutOperation (Private)
 
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id<BRKLayoutAction>> *actions;
+- (CGRect)applyActions;
 
 - (void)addAction:(id<BRKLayoutAction>)action;
 
@@ -43,8 +43,9 @@
 
 - (void)applyPendingOperationIfNeeded {
     if (self.pendingOperation) {
-        for (id<BRKLayoutAction> action in self.pendingOperation.actions.allValues) {
-            self.frame = [action applyToFrame:self.frame];
+        self.frame = [self.pendingOperation applyActions];
+        if ([self.view isKindOfClass:NSClassFromString(@"PXQuantityStepper")]) {
+            
         }
         self.pendingOperation = nil;
     }
@@ -52,27 +53,27 @@
 
 - (BRKLayoutOperation *)beginOperation {
     [self applyPendingOperationIfNeeded];
-    self.pendingOperation = [[BRKLayoutOperation alloc] initWithView:self.view];
+    self.pendingOperation = [[BRKLayoutOperation alloc] initWithView:self.view frame:self.frame];
     return self.pendingOperation;
 }
 
 - (BRKLayoutOperation *)beginOperationWithEdges:(UIRectEdge)edges {
     BRKLayoutOperation *pendingOperation = [self beginOperation];
-    BRKEdgeLayoutAction *action = [[BRKEdgeLayoutAction alloc] initWithView:self.view edges:edges];
+    BRKEdgeLayoutAction *action = [[BRKEdgeLayoutAction alloc] initWithView:self.view edges:edges initialValue:self.frame];
     [pendingOperation addAction:action];
     return pendingOperation;
 }
 
 - (BRKLayoutOperation *)beginOperationWithSizeAxis:(BRKAxis)axis {
     BRKLayoutOperation *pendingOperation = [self beginOperation];
-    BRKSizeLayoutAction *action = [[BRKSizeLayoutAction alloc] initWithView:self.view axis:axis];
+    BRKSizeLayoutAction *action = [[BRKSizeLayoutAction alloc] initWithView:self.view axis:axis initialValue:self.frame.size];
     [pendingOperation addAction:action];
     return pendingOperation;
 }
 
 - (BRKLayoutOperation *)beginOperationWithCenterAxis:(BRKAxis)axis {
     BRKLayoutOperation *pendingOperation = [self beginOperation];
-    BRKCenterLayoutAction *action = [[BRKCenterLayoutAction alloc] initWithView:self.view axis:axis];
+    BRKCenterLayoutAction *action = [[BRKCenterLayoutAction alloc] initWithView:self.view axis:axis initialValue:BRKRectGetCenter(self.frame)];
     [pendingOperation addAction:action];
     return pendingOperation;
 }
@@ -119,6 +120,10 @@
 
 - (BRKLayoutOperation *)center {
     return [self beginOperationWithCenterAxis:BRKAxisAll];
+}
+
+- (void)beginWithSize:(CGSize)size {
+    self.frame = CGRectMake(0, 0, size.width, size.height);
 }
 
 - (void)begin {

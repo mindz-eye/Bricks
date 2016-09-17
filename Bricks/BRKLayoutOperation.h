@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UIView *view;
 
-- (instancetype)initWithView:(UIView *)view NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithView:(UIView *)view frame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 - (void)begin;
+- (void)beginWithSize:(CGSize)size;
 - (void)commit;
 
 @end

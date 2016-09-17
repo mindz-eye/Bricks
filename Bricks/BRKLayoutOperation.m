@@ -13,19 +13,29 @@
 
 @interface BRKLayoutOperation ()
 
+@property (nonatomic, assign, readonly) CGRect frame;
 @property (nonatomic, copy) NSDictionary<NSString *, id<BRKLayoutAction>> *actions;
 
 @end
 
 @implementation BRKLayoutOperation
 
-- (instancetype)initWithView:(UIView *)view {
+- (instancetype)initWithView:(UIView *)view frame:(CGRect)frame {
     self = [super init];
     if (self) {
         _view = view;
+        _frame = frame;
         _actions = @{};
     }
     return self;
+}
+
+- (CGRect)applyActions {
+    CGRect resultingFrame = self.frame;
+    for (id<BRKLayoutAction> action in self.actions.allValues) {
+        resultingFrame = [action applyToFrame:resultingFrame];
+    }
+    return resultingFrame;
 }
 
 - (void)addAction:(id<BRKLayoutAction>)action {
@@ -41,7 +51,7 @@
 - (BRKEdgeLayoutAction *)edgeAction {
     BRKEdgeLayoutAction *action = [self actionByClass:[BRKEdgeLayoutAction class]];
     if (!action) {
-        action = [[BRKEdgeLayoutAction alloc] initWithView:self.view];
+        action = [[BRKEdgeLayoutAction alloc] initWithView:self.view edges:UIRectEdgeNone initialValue:self.frame];
         [self addAction:action];
     }
     return action;
@@ -50,7 +60,7 @@
 - (BRKCenterLayoutAction *)centerAction {
     BRKCenterLayoutAction *action = [self actionByClass:[BRKCenterLayoutAction class]];
     if (!action) {
-        action = [[BRKCenterLayoutAction alloc] initWithView:self.view];
+        action = [[BRKCenterLayoutAction alloc] initWithView:self.view axis:BRKAxisNone initialValue:BRKRectGetCenter(self.frame)];
         [self addAction:action];
     }
     return action;
@@ -59,7 +69,7 @@
 - (BRKSizeLayoutAction *)sizeAction {
     BRKSizeLayoutAction *action = [self actionByClass:[BRKSizeLayoutAction class]];
     if (!action) {
-        action = [[BRKSizeLayoutAction alloc] initWithView:self.view];
+        action = [[BRKSizeLayoutAction alloc] initWithView:self.view axis:BRKAxisNone initialValue:self.frame.size];
         [self addAction:action];
     }
     return action;

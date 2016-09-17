@@ -24,7 +24,7 @@ static inline CGRect BRKRectMoveLeft(CGRect rect, CGFloat x) {
 }
 
 static inline CGRect BRKRectMoveRight(CGRect rect, CGFloat x) {
-    rect.origin.x = rect.origin.x + x - rect.size.width;
+    rect.origin.x += (x - rect.size.width) - rect.origin.x;
     return rect;
 }
 
