@@ -37,8 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
-- (instancetype)init NS_UNAVAILABLE;
-
 @end
 
 extern CGRect brk_make(void(NS_NOESCAPE ^block)(BRKFrameMaker *make));

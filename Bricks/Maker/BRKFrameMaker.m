@@ -106,6 +106,10 @@ static void BRKThrowUnsupportedOperationException() {
     return self;
 }
 
+- (instancetype)init {
+    return [self initWithFrame:CGRectZero];
+}
+
 #pragma mark - Public
 
 - (BRKFrameMaker *)top {
