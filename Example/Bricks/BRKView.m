@@ -13,11 +13,11 @@
 
 @interface BRKView ()
 
-@property (nonatomic, strong, readonly) UIView *first;
-@property (nonatomic, strong, readonly) UIView *second;
-@property (nonatomic, strong, readonly) UIView *third;
-@property (nonatomic, strong, readonly) UIView *forth;
-@property (nonatomic, strong, readonly) UIView *border;
+@property (nonatomic, strong, readonly) UIView *black;
+@property (nonatomic, strong, readonly) UIView *darkGray;
+@property (nonatomic, strong, readonly) UIView *gray;
+@property (nonatomic, strong, readonly) UIView *lightGray;
+@property (nonatomic, strong, readonly) UIView *redBorder;
 
 @end
 
@@ -45,59 +45,59 @@
 }
 
 - (void)setupSubviews {
-    _first = [[UIView alloc] init];
-    self.first.backgroundColor = [UIColor blackColor];
-    [self addSubview:self.first];
+    _black = [[UIView alloc] init];
+    self.black.backgroundColor = [UIColor blackColor];
+    [self addSubview:self.black];
     
-    _second = [[UIView alloc] init];
-    self.second.backgroundColor = [UIColor darkGrayColor];
-    [self addSubview:self.second];
+    _darkGray = [[UIView alloc] init];
+    self.darkGray.backgroundColor = [UIColor darkGrayColor];
+    [self addSubview:self.darkGray];
     
-    _third = [[UIView alloc] init];
-    self.third.backgroundColor = [UIColor grayColor];
-    [self addSubview:self.third];
+    _gray = [[UIView alloc] init];
+    self.gray.backgroundColor = [UIColor grayColor];
+    [self addSubview:self.gray];
     
-    _forth = [[UIView alloc] init];
-    self.forth.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:self.forth];
+    _lightGray = [[UIView alloc] init];
+    self.lightGray.backgroundColor = [UIColor lightGrayColor];
+    [self addSubview:self.lightGray];
     
-    _border = [[UIView alloc] init];
-    self.border.layer.borderColor = [UIColor redColor].CGColor;
-    self.border.layer.borderWidth = 1.0;
-    [self addSubview:self.border];
+    _redBorder = [[UIView alloc] init];
+    self.redBorder.layer.borderColor = [UIColor redColor].CGColor;
+    self.redBorder.layer.borderWidth = 1.0;
+    [self addSubview:self.redBorder];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.first brk_make:^(BRKLayoutMaker * _Nonnull make) {
+    [self.black brk_make:^(BRKFrameMaker * _Nonnull make) {
         make.left.top.moveTo(15);
         make.width.height.resizeTo(90);
     }];
     
-    [self.border brk_make:^(BRKLayoutMaker * _Nonnull make) {
-        make.edges.resizeTo(self.first);
+    [self.redBorder brk_make:^(BRKFrameMaker * _Nonnull make) {
+        make.edges.resizeTo(self.black);
     }];
     
-    [self.second brk_make:^(BRKLayoutMaker * _Nonnull make) {
+    [self.darkGray brk_make:^(BRKFrameMaker * _Nonnull make) {
         make.height.resizeTo(15);
-        make.left.moveTo(self.first.brk_right).with.offset(15);
-        make.top.moveTo(self.first).with.offset(6);
-        make.right.resizeTo(@(-15));
+        make.left.moveTo(self.black.brk_right).with.offset(15);
+        make.top.moveTo(self.black).with.offset(6);
+        make.right.resizeTo(self.brk_right).with.offset(-15);
     }];
     
-    [self.third brk_make:^(BRKLayoutMaker * _Nonnull make) {
+    [self.gray brk_make:^(BRKFrameMaker * _Nonnull make) {
         make.height.resizeTo(15);
-        make.left.moveTo(self.first.brk_right).with.offset(15);
-        make.top.moveTo(self.second.brk_bottom).with.offset(15);
-        make.right.resizeTo(@(-15));
+        make.left.moveTo(self.black.brk_right).with.offset(15);
+        make.top.moveTo(self.darkGray.brk_bottom).with.offset(15);
+        make.right.resizeTo(self.brk_right).with.offset(-15);
     }];
     
-    [self.forth brk_make:^(BRKLayoutMaker * _Nonnull make) {
+    [self.lightGray brk_make:^(BRKFrameMaker * _Nonnull make) {
         make.height.resizeTo(15);
-        make.left.moveTo(self.first.brk_right).with.offset(15);
-        make.top.moveTo(self.third.brk_bottom).with.offset(15);
-        make.right.resizeTo(@(-15));
+        make.left.moveTo(self.black.brk_right).with.offset(15);
+        make.top.moveTo(self.gray.brk_bottom).with.offset(15);
+        make.right.resizeTo(self.brk_right).with.offset(-15);
     }];
 }
 

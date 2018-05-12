@@ -1,22 +1,22 @@
 {
   "name": "Bricks",
-  "version": "0.1.0",
-  "summary": "A short description of Bricks.",
+  "version": "0.2.0",
+  "summary": "A Masonry inspired manual layout library.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Bricks",
+  "homepage": "https://github.com/mindz_eye/Bricks",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Makarov Yuriy": "makarov.yuriy@pixty.com"
+    "Makarov Yuriy": "makarov.yuriy@gmail.com"
   },
   "source": {
     "git": "https://github.com/<GITHUB_USERNAME>/Bricks.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "Bricks/**/*"
 }
