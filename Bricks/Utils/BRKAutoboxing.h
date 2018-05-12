@@ -1,9 +1,9 @@
 //
-//  BRKUtilities.h
-//  Pods
+//  BRKAutoboxing.h
+//  Bricks
 //
-//  Created by Makarov Yury on 30/08/16.
-//
+//  Created by Makarov Yury on 25/08/16.
+//  Copyright © 2016 Makarov Yury. All rights reserved.
 //
 
 @import Foundation;
@@ -73,3 +73,19 @@ static inline id _BRKBoxValue(const char *type, ...) {
 }
 
 #define BRKBoxValue(value) _BRKBoxValue(@encode(__typeof__((value))), (value))
+
+/**
+ *  Convenience auto-boxing macros for BRKLayoutOperation methods.
+ *
+ *  Defining BRK_SHORTHAND_GLOBALS will turn on auto-boxing for default syntax.
+ *  A potential drawback of this is that the unprefixed macros will appear in global scope.
+ */
+#define brk_resizeTo(...)                 resizeTo(BRKBoxValue((__VA_ARGS__)))
+#define brk_moveTo(...)                   moveTo(BRKBoxValue((__VA_ARGS__)))
+
+#ifdef BRK_SHORTHAND_GLOBALS
+
+#define resizeTo(...)                     brk_resizeTo(__VA_ARGS__)
+#define moveTo(...)                       brk_moveTo(__VA_ARGS__)
+
+#endif

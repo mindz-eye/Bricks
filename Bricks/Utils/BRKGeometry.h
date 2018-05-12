@@ -1,5 +1,5 @@
 //
-//  BRKLayoutGeometry.h
+//  BRKGeometry.h
 //  Bricks
 //
 //  Created by Makarov Yury on 25/08/16.
@@ -32,5 +32,7 @@ extern CGRect BRKRectMoveEdge(CGRect rect, UIRectEdge edge, CGFloat value);
 extern CGFloat BRKRectGetEdge(CGRect rect, UIRectEdge edge);
 
 extern CGRect BRKRectApplyEdgeInsets(CGRect rect, UIEdgeInsets insets);
+
+extern CGPoint BRKPointAdd(CGPoint point1, CGPoint point2);
 
 NS_ASSUME_NONNULL_END

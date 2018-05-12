@@ -1,12 +1,14 @@
 //
-//  BRKGeometryHelpers.m
+//  BRKGeometry.m
 //  Bricks
 //
 //  Created by Makarov Yury on 25/08/16.
 //  Copyright © 2016 Makarov Yury. All rights reserved.
 //
 
-#import "BRKLayoutGeometry.h"
+#import "BRKGeometry.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 static inline CGRect BRKRectMoveTop(CGRect rect, CGFloat y) {
     rect.origin.y = y;
@@ -116,3 +118,9 @@ CGRect BRKRectApplyEdgeInsets(CGRect rect, UIEdgeInsets insets) {
     return CGRectMake(rect.origin.x + insets.left, rect.origin.y + insets.top,
                       rect.size.width - insets.left - insets.right, rect.size.height - insets.top - insets.bottom);
 }
+
+CGPoint BRKPointAdd(CGPoint point1, CGPoint point2) {
+    return (CGPoint){ .x = point1.x + point2.x, .y = point1.y + point2.y };
+}
+
+NS_ASSUME_NONNULL_END
